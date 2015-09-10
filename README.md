@@ -1,5 +1,5 @@
 # MATLAB Hydrological Index Tool (MHIT)
-MATLAB Hydrological Index Tool (MHIT) provides a collection of high-performance functions that calculates 171 Hydrological indices.
+MATLAB Hydrological Index Tool (MHIT) provides a collection of high-performance functions that calculates 171 hydrological indices. Our test over Saginaw Watershed, Michigan, with 13831 streams, shows that MHIT is over __200__ times faster than [EflowStats](https://github.com/USGS-R/EflowStats). Using MHIT, the total time needed to calculate all the indices for all the streams was brought from __47 hours__ down to only __12 minutes__.
 
 ## License
 Copyright (c) 2015, Mohammad Abouali (mabouali@gmail.com)
