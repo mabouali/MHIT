@@ -1,0 +1,69 @@
+# This is a sample config file for MHIT_CL
+# Lines starting with # are comments and ignored
+# empty lines are also ignored. So the next line is ignored.
+
+# The "outputFile" tag defines where to store the output. If you ignore the 
+# full path the output file is stored in the same location that MHIT_CL is
+# executing.
+outputFile = F:\temporary\MHIT_SampleData\calculatedIndices.csv
+
+# The output file could be also Excel file. Uncomment one of the following 
+# to test writing to an Excel file. Your system should be able to write into
+# Excel file. This usually means that you need to have Excel installed.
+#outputFile = F:\temporary\MHIT_SampleData\calculatedIndices.xls
+#outputFile = F:\temporary\MHIT_SampleData\calculatedIndices.xlsx
+
+# The output could have an extension of txt or any other extension. If the
+# extension is not .csv, .xls, or .xlsx the file is written as a 
+# comma separated text file, regardless of the extension.
+# Uncomment one of the following to test.
+#outputFile = F:\temporary\MHIT_SampleData\calculatedIndices.txt
+#outputFile = F:\temporary\MHIT_SampleData\calculatedIndices.MyUnknownExt
+
+
+# The following tag defines the full path to the location 
+# where drainage file is stored. If you ignore the full path it is assumed that
+# the drainage file is located in the same location that MHIT_CL is executing.
+drainageArea = F:\temporary\MHIT_SampleData\drainageArea.csv
+
+# The following tag defines the directory where the data files are stored.
+dataDirectory = F:\temporary\MHIT_SampleData
+
+# The following tag defines the name pattern for data file. Any file in 
+# "dataDirectory" that matches the following pattern is processed. So make
+# sure that only data files match the following pattern. The exception is 
+# the drainage file, defined by "drainageArea" and the output file defined 
+# by "outputFile" above. These files are excluded from the list even if they
+# match the provided pattern.
+# The following pattern matches any file starting with "reach" and ending 
+# with ".csv". For example "reach13639.csv" and "reach13640.csv".
+dataFilenamePattern = reach*.csv
+
+# The following defines number of parallel workers to be used.
+# If there is already a MATAB parallel worker running, that running pool would
+# be used and nParallelWorkers is ignored (unless if nParallelWorkers=0). 
+# otherwise if:
+# - - nParallelWorkers >= 1 -> a pool of parallel worker is started that 
+#                              contains nParallelWorkers.
+# - - nParallelWorkers = 0  -> data files are processed sequentially, even if
+#                              there is already a MATLAB parallel pool available.
+# - - nParallelWorkers = -1 -> A parallel pool is launched using the default 
+#                              configurations (if there is no parallel pool available).
+nParallelWorkers = 4
+
+# GENERAL Notes:
+# - - The order of above tags is not important. They can be provided in any
+#     order, as long as they are all provided.
+# - - The tags are not case sensitive; therefore, "outputFile", "OUTPUTFILE",
+#     "OutPutFiLe" are all the same.
+# - - Although the tags are not case sensitive, the filenames could be. If 
+#     you are using a file system on Linux, or if you have enabled case on 
+#     MAC OSX file system, the filenames are treated as case sensitive. On 
+#     Windows the filenames are not case sensitive.
+# - - The headers in the data file and drainage file are case sensitive. Refer
+#     to the sample data that is provided on GitHub for example.
+# - - the spaces around "=" are not needed.
+# - - if one tag is defined multiple of times, the last value is used.
+# - - if nParallelWorkers is omitted in the configuration file, it is assumed
+#     that (nParallelWorkers = -1).
+
