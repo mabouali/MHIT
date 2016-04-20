@@ -21,6 +21,7 @@ There are three folders
 - Data: contains a sample data set.
 - MFiles: contains all the MATLAB files and codes. There are individual files for each (or a group of) indices. Some other matlab functions are provided to facilitate the calculation of the indices.
 - Output: Sample output file
+- Binaries: which holds compiled version of MHIT Command Line (MHIT-CL). This compiled version can be used without any MATLAB License. This is provided for those who do not have access to a MATLAB License. 
 
 ## Test files and examples:
 There are three test/example fiels provided.
